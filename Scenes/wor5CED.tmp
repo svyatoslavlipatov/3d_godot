@@ -1,0 +1,494 @@
+[gd_scene load_steps=14 format=3 uid="uid://coomytspm6ma"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_hjae5"]
+[ext_resource type="Texture2D" uid="uid://buqjd3bd1jgx2" path="res://Textures/sneg_texture.jpg" id="2_anqxi"]
+[ext_resource type="PackedScene" uid="uid://dhwrlpus7xywj" path="res://models_scenes/house.tscn" id="3_yu8p7"]
+[ext_resource type="PackedScene" uid="uid://cvdyvoqk3vex7" path="res://models_scenes/zabor.tscn" id="4_12x77"]
+[ext_resource type="PackedScene" uid="uid://88p32w6uuhpd" path="res://pers.tscn" id="5_iprfi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfon1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 1.4
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ae488"]
+sky_material = SubResource("ProceduralSkyMaterial_wfon1")
+
+[sub_resource type="Environment" id="Environment_3uf2v"]
+background_mode = 2
+sky = SubResource("Sky_ae488")
+tonemap_mode = 2
+tonemap_exposure = 0.49
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0527
+volumetric_fog_albedo = Color(0.3782, 0.62, 0.60388, 1)
+volumetric_fog_emission = Color(0.3, 0.385, 0.4, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_takx0"]
+vertices = PackedVector3Array(-44.7534, 0.495492, -45.487, -43.0034, 0.495492, -45.487, -43.0034, 0.495492, -49.487, -49.5034, 0.495492, -49.487, -49.5034, 0.495492, -45.737, 43.7466, 0.495492, -45.487, 43.7466, 0.495492, -49.487, 45.7466, 0.495492, -45.487, 45.9966, 0.495492, -43.237, 49.4966, 0.495492, -43.237, 49.4966, 0.495492, -49.487, -44.7534, 0.495492, 49.513, -44.7534, 0.495492, 46.013, -45.2534, 0.495492, 45.763, -49.5034, 0.495492, 49.513, -45.2534, 0.495492, -45.237, 12.7466, 0.495492, -38.237, 15.2466, 0.495492, -38.487, 14.9966, 0.495492, -43.987, -44.0034, 0.495492, -43.987, 13.4966, 0.495492, -27.237, 13.7466, 0.495492, -29.737, 44.7466, 0.495492, -28.237, 25.7466, 0.495492, -28.237, 25.4966, 0.495492, -27.487, 13.9966, 0.495492, -26.487, 44.7466, 0.495492, 44.513, -44.0034, 0.495492, 44.513, 23.9966, 0.495492, -39.487, 23.9966, 0.495492, -43.987, 24.7466, 0.495492, -39.237, 44.7466, 0.495492, -43.987, 45.9966, 0.495492, 45.763, 45.4966, 0.495492, 46.013, 45.4966, 0.495492, 49.513, 49.4966, 0.495492, 49.513, 22.2466, 5.99549, -28.737, 22.4966, 5.99549, -28.237, 25.2466, 3.99549, -28.487, 24.4966, 3.74549, -37.987, 24.2466, 3.99549, -38.487, 21.4966, 5.99549, -38.487, 23.5117, 4.74549, -30.468, 13.9966, 4.49549, -37.237, 15.9966, 5.99549, -37.737, 13.2466, 3.99549, -37.487, 13.7466, 3.99549, -35.737, 13.9966, 3.74549, -27.987, 14.2466, 3.99549, -27.487, 16.9966, 5.99549, -27.737, 16.2466, 5.99549, -34.987, 14.2466, 4.49549, -34.737, 19.2466, 6.74549, -29.487, 19.7466, 6.74549, -28.737, 19.2466, 6.74549, -36.237, 18.7466, 6.74549, -37.487, 14.7466, 0.495492, -36.737, 15.4966, 0.495492, -28.487, 23.7466, 0.495492, -29.237, 22.9966, 0.495492, -37.487)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(2, 6, 1), PackedInt32Array(1, 6, 5), PackedInt32Array(9, 8, 7), PackedInt32Array(7, 5, 6), PackedInt32Array(6, 10, 7), PackedInt32Array(7, 10, 9), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(4, 0, 15), PackedInt32Array(15, 13, 4), PackedInt32Array(4, 13, 14), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(21, 20, 16), PackedInt32Array(16, 20, 19), PackedInt32Array(22, 24, 23), PackedInt32Array(24, 22, 25), PackedInt32Array(25, 22, 26), PackedInt32Array(20, 25, 19), PackedInt32Array(19, 25, 27), PackedInt32Array(27, 25, 26), PackedInt32Array(29, 28, 18), PackedInt32Array(18, 28, 17), PackedInt32Array(28, 29, 30), PackedInt32Array(30, 29, 31), PackedInt32Array(23, 30, 22), PackedInt32Array(22, 30, 31), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(8, 9, 32), PackedInt32Array(32, 9, 35), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 42, 36), PackedInt32Array(36, 42, 37), PackedInt32Array(37, 42, 38), PackedInt32Array(38, 42, 39), PackedInt32Array(39, 42, 41), PackedInt32Array(45, 44, 43), PackedInt32Array(45, 43, 46), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 51), PackedInt32Array(49, 51, 50), PackedInt32Array(46, 51, 47), PackedInt32Array(46, 47, 45), PackedInt32Array(53, 52, 54), PackedInt32Array(54, 52, 55), PackedInt32Array(59, 58, 56), PackedInt32Array(56, 58, 57), PackedInt32Array(33, 34, 12), PackedInt32Array(12, 34, 11)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycs5h"]
+albedo_texture = ExtResource("2_anqxi")
+uv1_triplanar = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cqsmk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0ewm2"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3j24"]
+albedo_color = Color(0.758235, 0.291438, 0.146751, 1)
+emission_enabled = true
+emission = Color(0.760538, 0.471358, 0.384955, 1)
+emission_energy_multiplier = 10.19
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.572146, -0.443079, 0.690167, 0, 0.841511, 0.54024, -0.820152, 0.309096, -0.481467, 0, 0, 0)
+light_energy = 0.238
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3uf2v")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map"]
+navigation_mesh = SubResource("NavigationMesh_takx0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00337887, 0.00537586, 0.0130234)
+material_override = SubResource("StandardMaterial3D_ycs5h")
+use_collision = true
+size = Vector3(100, 0.002, 100)
+
+[node name="cabinDoor3" parent="Map/NavigationRegion3D" instance=ExtResource("3_yu8p7")]
+transform = Transform3D(-0.996242, 0.000947396, -0.0866008, 0.000864993, 0.999999, 0.000989139, 0.0866016, 0.000910518, -0.996243, 19.6945, 0.00637627, -27.9423)
+
+[node name="zabor" type="Node3D" parent="Map/NavigationRegion3D"]
+transform = Transform3D(3.254, 0, 0, 0, 1.616, 0, 0, 0, 1.616, 8.94691, 0, -44.6971)
+
+[node name="snow-wood-structure-high-part2" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="snow-wood-structure-high-part3" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.891211, 0, 0)
+
+[node name="snow-wood-structure-high-part4" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part5" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part6" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part7" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45606, 0, 0)
+
+[node name="snow-wood-structure-high-part8" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part9" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part10" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part11" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part16" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part17" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part18" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part19" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part20" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part21" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45605, 0, 0)
+
+[node name="snow-wood-structure-high-part22" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part26" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1199, 0, 0)
+
+[node name="snow-wood-structure-high-part33" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9803, 0, 0)
+
+[node name="snow-wood-structure-high-part27" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2286, 0, 0)
+
+[node name="snow-wood-structure-high-part28" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3374, 0, 0)
+
+[node name="snow-wood-structure-high-part29" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4462, 0, 0)
+
+[node name="snow-wood-structure-high-part30" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.555, 0, 0)
+
+[node name="snow-wood-structure-high-part31" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6638, 0, 0)
+
+[node name="snow-wood-structure-high-part32" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77259, 0, 0)
+
+[node name="snow-wood-structure-high-part23" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part24" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part25" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89121, 0, 0)
+
+[node name="snow-wood-structure-high-part12" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part13" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80332, 0, 0)
+
+[node name="snow-wood-structure-high-part14" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="snow-wood-structure-high-part15" parent="Map/NavigationRegion3D/zabor" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="zabor2" type="Node3D" parent="Map/NavigationRegion3D"]
+transform = Transform3D(-1.42237e-07, 0, 1.616, 0, 1.616, 0, -3.254, 0, -7.06376e-08, -44.5531, 0, -8.39706)
+
+[node name="snow-wood-structure-high-part2" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="snow-wood-structure-high-part3" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.891211, 0, 0)
+
+[node name="snow-wood-structure-high-part4" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part5" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part6" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part7" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45606, 0, 0)
+
+[node name="snow-wood-structure-high-part8" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part9" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part10" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part11" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part16" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part17" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part18" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part19" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part20" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part21" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45605, 0, 0)
+
+[node name="snow-wood-structure-high-part22" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part26" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1199, 0, 0)
+
+[node name="snow-wood-structure-high-part33" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9803, 0, 0)
+
+[node name="snow-wood-structure-high-part27" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2286, 0, 0)
+
+[node name="snow-wood-structure-high-part28" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3374, 0, 0)
+
+[node name="snow-wood-structure-high-part29" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4462, 0, 0)
+
+[node name="snow-wood-structure-high-part30" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.555, 0, 0)
+
+[node name="snow-wood-structure-high-part31" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6638, 0, 0)
+
+[node name="snow-wood-structure-high-part32" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77259, 0, 0)
+
+[node name="snow-wood-structure-high-part23" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part24" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part25" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89121, 0, 0)
+
+[node name="snow-wood-structure-high-part12" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part13" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80332, 0, 0)
+
+[node name="snow-wood-structure-high-part14" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="snow-wood-structure-high-part15" parent="Map/NavigationRegion3D/zabor2" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="zabor3" type="Node3D" parent="Map/NavigationRegion3D"]
+transform = Transform3D(-3.254, 0, -1.41275e-07, 0, 1.616, 0, 2.84474e-07, 0, -1.616, -8.15309, 0, 45.2029)
+
+[node name="snow-wood-structure-high-part2" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="snow-wood-structure-high-part3" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.891211, 0, 0)
+
+[node name="snow-wood-structure-high-part4" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part5" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part6" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part7" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45606, 0, 0)
+
+[node name="snow-wood-structure-high-part8" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part9" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part10" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part11" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part16" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part17" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part18" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part19" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part20" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part21" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45605, 0, 0)
+
+[node name="snow-wood-structure-high-part22" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part26" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1199, 0, 0)
+
+[node name="snow-wood-structure-high-part33" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9803, 0, 0)
+
+[node name="snow-wood-structure-high-part27" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2286, 0, 0)
+
+[node name="snow-wood-structure-high-part28" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3374, 0, 0)
+
+[node name="snow-wood-structure-high-part29" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4462, 0, 0)
+
+[node name="snow-wood-structure-high-part30" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.555, 0, 0)
+
+[node name="snow-wood-structure-high-part31" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6638, 0, 0)
+
+[node name="snow-wood-structure-high-part32" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77259, 0, 0)
+
+[node name="snow-wood-structure-high-part23" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part24" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part25" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89121, 0, 0)
+
+[node name="snow-wood-structure-high-part12" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part13" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80332, 0, 0)
+
+[node name="snow-wood-structure-high-part14" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="snow-wood-structure-high-part15" parent="Map/NavigationRegion3D/zabor3" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="zabor4" type="Node3D" parent="Map/NavigationRegion3D"]
+transform = Transform3D(4.26711e-07, 0, -1.616, 0, 1.616, 0, 3.254, 0, 2.11913e-07, 45.3469, 0, 8.90293)
+
+[node name="snow-wood-structure-high-part2" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="snow-wood-structure-high-part3" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.891211, 0, 0)
+
+[node name="snow-wood-structure-high-part4" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part5" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part6" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part7" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45606, 0, 0)
+
+[node name="snow-wood-structure-high-part8" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part9" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part10" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part11" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part16" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part17" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0209, 0, 0)
+
+[node name="snow-wood-structure-high-part18" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12969, 0, 0)
+
+[node name="snow-wood-structure-high-part19" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23848, 0, 0)
+
+[node name="snow-wood-structure-high-part20" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34727, 0, 0)
+
+[node name="snow-wood-structure-high-part21" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45605, 0, 0)
+
+[node name="snow-wood-structure-high-part22" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56484, 0, 0)
+
+[node name="snow-wood-structure-high-part26" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1199, 0, 0)
+
+[node name="snow-wood-structure-high-part33" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9803, 0, 0)
+
+[node name="snow-wood-structure-high-part27" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2286, 0, 0)
+
+[node name="snow-wood-structure-high-part28" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3374, 0, 0)
+
+[node name="snow-wood-structure-high-part29" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4462, 0, 0)
+
+[node name="snow-wood-structure-high-part30" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.555, 0, 0)
+
+[node name="snow-wood-structure-high-part31" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6638, 0, 0)
+
+[node name="snow-wood-structure-high-part32" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77259, 0, 0)
+
+[node name="snow-wood-structure-high-part23" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67363, 0, 0)
+
+[node name="snow-wood-structure-high-part24" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78242, 0, 0)
+
+[node name="snow-wood-structure-high-part25" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89121, 0, 0)
+
+[node name="snow-wood-structure-high-part12" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91211, 0, 0)
+
+[node name="snow-wood-structure-high-part13" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80332, 0, 0)
+
+[node name="snow-wood-structure-high-part14" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="snow-wood-structure-high-part15" parent="Map/NavigationRegion3D/zabor4" instance=ExtResource("4_12x77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6945, 0, 0)
+
+[node name="ache2" parent="Map/NavigationRegion3D" instance=ExtResource("5_iprfi")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 2.6, 0, -5)
+
+[node name="Player" type="CharacterBody3D" parent="Map/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0999999, 0)
+script = ExtResource("1_hjae5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/NavigationRegion3D/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_cqsmk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("ConvexPolygonShape3D_0ewm2")
+
+[node name="Head" type="Node3D" parent="Map/NavigationRegion3D/Player"]
+
+[node name="Camera3D" type="Camera3D" parent="Map/NavigationRegion3D/Player/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.5, 95.6, -86.5)
+material_override = SubResource("StandardMaterial3D_v3j24")
+cast_shadow = 0
+radius = 20.0
+radial_segments = 100
+rings = 100

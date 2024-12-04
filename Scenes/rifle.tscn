@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmxn8ayghm2hp"]
+
+[ext_resource type="PackedScene" uid="uid://bt8aqi05sfg1s" path="res://Models/Candy cane (1).glb" id="1_x8cft"]
+
+[sub_resource type="Animation" id="Animation_ixl3g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rnrfc"]
+resource_name = "Shoot"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.07),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hlvqx"]
+_data = {
+"RESET": SubResource("Animation_ixl3g"),
+"Shoot": SubResource("Animation_rnrfc")
+}
+
+[node name="Rifle_candy" instance=ExtResource("1_x8cft")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -1.19209e-07, 0, -1.1)
+
+[node name="Candy_Cane" parent="." index="0"]
+transform = Transform3D(0.051, 0, 0, 0, 0.051, 0, 0, 0, 0.051, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+root_node = NodePath("../Candy_Cane")
+libraries = {
+"": SubResource("AnimationLibrary_hlvqx")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="2"]
+transform = Transform3D(0.807574, 1.09411e-21, 7.10543e-15, -3.55271e-15, -3.53002e-08, 1.38114, 0, -0.807574, -6.03715e-08, -1.55259, 0.500722, -0.0187028)
+target_position = Vector3(0, 0, -1)
