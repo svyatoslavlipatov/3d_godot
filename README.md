@@ -1,6 +1,8 @@
 # Демонстрация
 
 ## **Видео**
+https://github.com/user-attachments/assets/1fac5910-33d6-4bfb-aa27-088da82a3084
+
 
 
 ## **Фото локации**
